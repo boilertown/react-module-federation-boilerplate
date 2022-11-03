@@ -8,6 +8,6 @@
 		},
 		"moduleResolution": "node",
 		"declaration": true,
-		"isolatedModules": true
+		"isolatedModules": false
 	}
 }

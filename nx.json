@@ -8,6 +8,10 @@
 			}
 		}
 	},
-	"targetDefaults": {},
+	"targetDefaults": {
+		"build": {
+			"dependsOn": ["^build"]
+		}
+	},
 	"defaultBase": "main"
 }
