@@ -1,0 +1,51 @@
+{
+	"name": "@boilertowns-example/react-module-federation-boilerplate",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/boilertowns/react-module-federation-boilerplate.git"
+	},
+	"workspaces": [
+		"apps/*"
+	],
+	"scripts": {
+		"build": "nx run-many --target=build",
+		"dev": "nx run-many --target=dev",
+		"graph": "nx graph",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"*.{md,mdx,yml,json}": [
+			"prettier --write"
+		]
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.1.2",
+		"@commitlint/config-conventional": "^17.1.0",
+		"@trivago/prettier-plugin-sort-imports": "^3.4.0",
+		"@types/node": "^18.11.8",
+		"@types/react": "^18.0.24",
+		"@types/react-dom": "^18.0.8",
+		"@typescript-eslint/eslint-plugin": "^5.41.0",
+		"@typescript-eslint/parser": "^5.41.0",
+		"eslint": "^8.26.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.31.10",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1",
+		"typescript": "^4.8.4",
+		"nx": "15.0.7",
+		"@nrwl/nx-cloud": "latest"
+	},
+	"packageManager": "pnpm@7.8.0",
+	"engines": {
+		"node": "^14.17.0 || >=16.0.0"
+	}
+}
