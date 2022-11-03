@@ -42,26 +42,16 @@
 
 ## Development
 
-- Bootstrap project and get the repo ready to be developed on:
-
-  ```sh
-  # Run build commands from all workspaces.
-  pnpm build
-
-  # or build internal packages from `packages/*` workspace only.
-  pnpm build:packages
-  ```
-
-- Run the `apps/*` in development environment:
+- Run all projects in `apps/*` folder in development environment:
 
   ```sh
   pnpm dev
   ```
 
-- Run all test commands from all workspaces:
+- Build all projects in `apps/*` for to deploy:
 
   ```sh
-  pnpm test
+  pnpm build
   ```
 
 ## Contributing
