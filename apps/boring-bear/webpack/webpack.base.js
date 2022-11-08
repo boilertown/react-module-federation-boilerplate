@@ -1,6 +1,7 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const ModuleFederationPlugin =
+	require('webpack').container.ModuleFederationPlugin;
 
 module.exports = {
 	entry: path.resolve(__dirname, '../src/index.tsx'),
@@ -13,20 +14,20 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [
-		new Dotenv(),
-		new CopyPlugin({
-			patterns: [
-				path.resolve(__dirname, '../src/assets/static/robots.txt'),
-				{
-					from: path.resolve(__dirname, '../src/assets/css'),
-					to: 'css',
-				},
-			],
-		}),
-	],
 	resolve: {
 		modules: ['src', 'node_modules'],
 		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 	},
+	plugins: [
+		new Dotenv(),
+		new ModuleFederationPlugin({
+			name: 'boring_bear',
+			filename: 'remoteEntry.js',
+			remotes: {
+				header: 'header@http://localhost:2024/remoteEntry.js',
+			},
+			exposes: {},
+			shared: ['react', 'react-dom'],
+		}),
+	],
 };

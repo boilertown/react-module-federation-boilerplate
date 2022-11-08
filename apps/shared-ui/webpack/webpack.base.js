@@ -1,10 +1,14 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 const ModuleFederationPlugin =
 	require('webpack').container.ModuleFederationPlugin;
+const deps = require('../package.json').dependencies;
 
 module.exports = {
 	entry: path.resolve(__dirname, '../src/index.tsx'),
+	output: {
+		path: path.resolve(__dirname, '../build'),
+		publicPath: 'auto',
+	},
 	target: 'web',
 	module: {
 		rules: [
@@ -19,15 +23,23 @@ module.exports = {
 		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 	},
 	plugins: [
-		new Dotenv(),
 		new ModuleFederationPlugin({
-			name: 'fluffy_tomatoes',
+			name: 'shared_ui',
 			filename: 'remoteEntry.js',
-			remotes: {
-				header: 'header@http://localhost:2024/remoteEntry.js',
+			exposes: {
+				'./Header': './src/Header',
 			},
-			exposes: {},
-			shared: ['react', 'react-dom'],
+			shared: {
+				...deps,
+				react: {
+					singleton: true,
+					requiredVersion: deps.react,
+				},
+				'react-dom': {
+					singleton: true,
+					requiredVersion: deps['react-dom'],
+				},
+			},
 		}),
 	],
 };

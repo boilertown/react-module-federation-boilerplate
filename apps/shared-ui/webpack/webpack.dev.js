@@ -5,11 +5,6 @@ const webpackBaseConfig = require('./webpack.base');
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'development',
-	output: {
-		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, '../build'),
-		publicPath: '/',
-	},
 	module: {
 		rules: [
 			{
@@ -27,7 +22,7 @@ module.exports = merge(webpackBaseConfig, {
 	devServer: {
 		historyApiFallback: true,
 		static: path.resolve(__dirname, '../build'),
-		posty: 2023,
+		port: 2024,
 		hot: true,
 		open: true,
 		client: {

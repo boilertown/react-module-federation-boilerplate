@@ -27,6 +27,7 @@ module.exports = merge(webpackBaseConfig, {
 	devServer: {
 		historyApiFallback: true,
 		static: path.resolve(__dirname, '../build'),
+		port: 2022,
 		hot: true,
 		open: true,
 		client: {

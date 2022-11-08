@@ -26,7 +26,7 @@ importers:
     devDependencies:
       '@commitlint/cli': 17.2.0
       '@commitlint/config-conventional': 17.2.0
-      '@nrwl/nx-cloud': 15.0.1
+      '@nrwl/nx-cloud': 15.0.2
       '@trivago/prettier-plugin-sort-imports': 3.4.0_prettier@2.7.1
       '@types/node': 18.11.9
       '@types/react': 18.0.24
@@ -51,9 +51,7 @@ importers:
       '@babel/preset-env': ^7.19.4
       '@babel/preset-react': ^7.18.6
       '@babel/preset-typescript': ^7.18.6
-      '@babel/runtime': ^7.20.0
       babel-loader: ^9.0.0
-      copy-webpack-plugin: ^11.0.0
       css-minimizer-webpack-plugin: ^4.2.2
       dotenv: ^16.0.3
       dotenv-webpack: ^8.0.1
@@ -68,7 +66,6 @@ importers:
       webpack-dev-server: ^4.11.1
       webpack-merge: ^5.8.0
     dependencies:
-      '@babel/runtime': 7.20.1
       history: 5.3.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -80,7 +77,6 @@ importers:
       '@babel/preset-react': 7.18.6_@babel+core@7.19.6
       '@babel/preset-typescript': 7.18.6_@babel+core@7.19.6
       babel-loader: 9.0.1_6zc4kxld457avlfyhj3lzsljlm
-      copy-webpack-plugin: 11.0.0_webpack@5.74.0
       css-minimizer-webpack-plugin: 4.2.2_webpack@5.74.0
       dotenv: 16.0.3
       dotenv-webpack: 8.0.1_webpack@5.74.0
@@ -98,9 +94,7 @@ importers:
       '@babel/preset-env': ^7.19.4
       '@babel/preset-react': ^7.18.6
       '@babel/preset-typescript': ^7.18.6
-      '@babel/runtime': ^7.20.0
       babel-loader: ^9.0.0
-      copy-webpack-plugin: ^11.0.0
       css-minimizer-webpack-plugin: ^4.2.2
       dotenv: ^16.0.3
       dotenv-webpack: ^8.0.1
@@ -115,7 +109,6 @@ importers:
       webpack-dev-server: ^4.11.1
       webpack-merge: ^5.8.0
     dependencies:
-      '@babel/runtime': 7.20.1
       history: 5.3.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -127,8 +120,44 @@ importers:
       '@babel/preset-react': 7.18.6_@babel+core@7.19.6
       '@babel/preset-typescript': 7.18.6_@babel+core@7.19.6
       babel-loader: 9.0.1_6zc4kxld457avlfyhj3lzsljlm
-      copy-webpack-plugin: 11.0.0_webpack@5.74.0
       css-minimizer-webpack-plugin: 4.2.2_webpack@5.74.0
+      dotenv: 16.0.3
+      dotenv-webpack: 8.0.1_webpack@5.74.0
+      html-webpack-plugin: 5.5.0_webpack@5.74.0
+      ts-loader: 9.4.1_webpack@5.74.0
+      webpack: 5.74.0_webpack-cli@4.10.0
+      webpack-cli: 4.10.0_vnmgq7jx5zjkzolvtfp7mdf5ri
+      webpack-dev-server: 4.11.1_5v66e2inugklgvlh4huuavolfq
+      webpack-merge: 5.8.0
+
+  apps/shared-ui:
+    specifiers:
+      '@babel/core': ^7.19.6
+      '@babel/plugin-transform-runtime': ^7.19.6
+      '@babel/preset-env': ^7.19.4
+      '@babel/preset-react': ^7.18.6
+      '@babel/preset-typescript': ^7.18.6
+      babel-loader: ^9.0.0
+      dotenv: ^16.0.3
+      dotenv-webpack: ^8.0.1
+      html-webpack-plugin: ^5.5.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      ts-loader: ^9.4.1
+      webpack: ^5.74.0
+      webpack-cli: ^4.10.0
+      webpack-dev-server: ^4.11.1
+      webpack-merge: ^5.8.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
+      '@babel/core': 7.19.6
+      '@babel/plugin-transform-runtime': 7.19.6_@babel+core@7.19.6
+      '@babel/preset-env': 7.19.4_@babel+core@7.19.6
+      '@babel/preset-react': 7.18.6_@babel+core@7.19.6
+      '@babel/preset-typescript': 7.18.6_@babel+core@7.19.6
+      babel-loader: 9.0.1_6zc4kxld457avlfyhj3lzsljlm
       dotenv: 16.0.3
       dotenv-webpack: 8.0.1_webpack@5.74.0
       html-webpack-plugin: 5.5.0_webpack@5.74.0
@@ -1805,8 +1834,8 @@ packages:
       - debug
     dev: true
 
-  /@nrwl/nx-cloud/15.0.1:
-    resolution: {integrity: sha512-EvUxiXF/t8czg6ORWRZ3bTPfUHH45Z3VMubmnBEWmcB3IOXQu25Du7KmUCEAqjqb1spuWrsWRzSxkIrpz8Xl9g==}
+  /@nrwl/nx-cloud/15.0.2:
+    resolution: {integrity: sha512-DaTASuXmGyQHMxJuK6y3f7fs+Q0qQCfYDIDVGK9muNwN/QItLeWdRNltLQxbrBeS112kQTu2FPsr0DmRD60+0A==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -3132,21 +3161,6 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /copy-webpack-plugin/11.0.0_webpack@5.74.0:
-    resolution: {integrity: sha512-fX2MWpamkW0hZxMEg0+mYnA40LTosOSa5TqZ9GYIBzyJa9C3QUaMPSE2xAi/buNr8u89SfD9wHSQVBzrRa/SOQ==}
-    engines: {node: '>= 14.15.0'}
-    peerDependencies:
-      webpack: ^5.1.0
-    dependencies:
-      fast-glob: 3.2.12
-      glob-parent: 6.0.2
-      globby: 13.1.2
-      normalize-path: 3.0.0
-      schema-utils: 4.0.0
-      serialize-javascript: 6.0.0
-      webpack: 5.74.0_webpack-cli@4.10.0
-    dev: true
-
   /core-js-compat/3.26.0:
     resolution: {integrity: sha512-piOX9Go+Z4f9ZiBFLnZ5VrOpBl0h7IGCkiFUN11QTe6LjAvOT3ifL/5TdoizMh99hcGy5SoLyWbapIY/PIb/3A==}
     dependencies:
@@ -4278,17 +4292,6 @@ packages:
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
-    dev: true
-
-  /globby/13.1.2:
-    resolution: {integrity: sha512-LKSDZXToac40u8Q1PQtZihbNdTYSNMuWe+K5l+oa6KgDzSvVrHXlJy40hUP522RjAIoNLJYBJi7ow+rbFpIhHQ==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dependencies:
-      dir-glob: 3.0.1
-      fast-glob: 3.2.12
-      ignore: 5.2.0
-      merge2: 1.4.1
-      slash: 4.0.0
     dev: true
 
   /graceful-fs/4.2.10:
@@ -6481,11 +6484,6 @@ packages:
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
-    dev: true
-
-  /slash/4.0.0:
-    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
-    engines: {node: '>=12'}
     dev: true
 
   /slice-ansi/3.0.0:

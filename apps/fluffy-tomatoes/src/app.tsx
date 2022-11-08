@@ -4,4 +4,4 @@ export const App = () => {
 	return <RootRouter />;
 };
 
-App.displayName = 'App.BoringBear';
+App.displayName = 'App.FluffyTomatoes';

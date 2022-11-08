@@ -1,8 +1,8 @@
-<h1 align="center">♨️ React Monorepo Boilerplate</h1>
+<h1 align="center">♨️ React Module Federation Boilerplate</h1>
 
 <div align="center">
   <p>
-    A React boilerplate with opinionated setup to help you quickly kickstart your monorepo project.
+    A React boilerplate with opinionated setup to help you quickly kickstart projects with module federation.
   </p>
   <img src="https://img.shields.io/github/license/boilertowns/react-module-federation-boilerplate?style=flat-square" alt="MIT license" >
 </div>
