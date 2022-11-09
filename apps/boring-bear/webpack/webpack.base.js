@@ -1,7 +1,7 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 const ModuleFederationPlugin =
 	require('webpack').container.ModuleFederationPlugin;
+const deps = require('../package.json').dependencies;
 
 module.exports = {
 	entry: path.resolve(__dirname, '../src/index.tsx'),
@@ -19,15 +19,23 @@ module.exports = {
 		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 	},
 	plugins: [
-		new Dotenv(),
 		new ModuleFederationPlugin({
-			name: 'boring_bear',
+			name: 'boring-bear',
 			filename: 'remoteEntry.js',
 			remotes: {
-				header: 'header@http://localhost:2024/remoteEntry.js',
+				shared_ui: 'shared_ui@http://localhost:2024/remoteEntry.js',
 			},
 			exposes: {},
-			shared: ['react', 'react-dom'],
+			shared: {
+				react: {
+					singleton: true,
+					requiredVersion: deps.react,
+				},
+				'react-dom': {
+					singleton: true,
+					requiredVersion: deps['react-dom'],
+				},
+			},
 		}),
 	],
 };

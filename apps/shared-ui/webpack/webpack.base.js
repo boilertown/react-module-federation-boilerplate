@@ -26,11 +26,11 @@ module.exports = {
 		new ModuleFederationPlugin({
 			name: 'shared_ui',
 			filename: 'remoteEntry.js',
+			remotes: {},
 			exposes: {
 				'./Header': './src/Header',
 			},
 			shared: {
-				...deps,
 				react: {
 					singleton: true,
 					requiredVersion: deps.react,

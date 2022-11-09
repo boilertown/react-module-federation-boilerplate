@@ -24,10 +24,6 @@ module.exports = merge(webpackBaseConfig, {
 		static: path.resolve(__dirname, '../build'),
 		port: 2024,
 		hot: true,
-		open: true,
-		client: {
-			logging: 'none',
-		},
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

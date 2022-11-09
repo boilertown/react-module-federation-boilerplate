@@ -1,12 +1,9 @@
 const path = require('path');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base');
-
-dotenv.config();
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'production',
