@@ -41,7 +41,7 @@
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
 		"typescript": "^4.8.4",
-		"nx": "15.0.7",
+		"nx": "15.2.4",
 		"@nrwl/nx-cloud": "latest"
 	},
 	"packageManager": "pnpm@7.8.0",
