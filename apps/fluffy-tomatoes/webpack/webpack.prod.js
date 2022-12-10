@@ -7,9 +7,6 @@ const webpackBaseConfig = require('./webpack.base');
 
 module.exports = merge(webpackBaseConfig, {
 	mode: 'production',
-	entry: {
-		main: path.resolve(__dirname, '../src/main.tsx'),
-	},
 	output: {
 		filename: '[name].[chunkhash].bundle.js',
 		chunkFilename: '[name].[chunkhash].chunk.js',

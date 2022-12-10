@@ -1,13 +1,13 @@
 const path = require('path');
 const ModuleFederationPlugin =
 	require('webpack').container.ModuleFederationPlugin;
-const deps = require('../package.json').dependencies;
 
 module.exports = {
 	entry: path.resolve(__dirname, '../src/index.tsx'),
 	output: {
 		path: path.resolve(__dirname, '../build'),
 		publicPath: 'auto',
+		clean: true,
 	},
 	target: 'web',
 	module: {
@@ -26,20 +26,11 @@ module.exports = {
 		new ModuleFederationPlugin({
 			name: 'shared_ui',
 			filename: 'remoteEntry.js',
-			remotes: {},
 			exposes: {
 				'./Header': './src/Header',
 			},
-			shared: {
-				react: {
-					singleton: true,
-					requiredVersion: deps.react,
-				},
-				'react-dom': {
-					singleton: true,
-					requiredVersion: deps['react-dom'],
-				},
-			},
+			remotes: {},
+			shared: {},
 		}),
 	],
 };
